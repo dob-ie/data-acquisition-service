@@ -1,16 +1,14 @@
-# FuhSen [![Build Status](https://travis-ci.org/LiDaKrA/FuhSen-reactive.svg?branch=master)](https://travis-ci.org/LiDaKrA/FuhSen-reactive)
+# Data Acquisition Service
 
-![Logo](https://cloud.githubusercontent.com/assets/4923203/15185984/39e36d62-1769-11e6-993f-cbe815ded833.png)
+## Description
+A scala version of the Data Acquisition Service based on the **MINTE** approach.
 
+### References
+Collarana et al. [MINTE: semantically integrating RDF graphs](https://www.researchgate.net/project/MINTE-A-Semantic-Integration-Approach-for-RDF-Graphs)
+Collarana et al. [Synthesizing Knowledge Graphs from web sources with the MINTE+ framework](https://www.researchgate.net/publication/325381996_Synthesizing_Knowledge_Graphs_from_web_sources_with_the_MINTE_framework)
 
-### Description
-Reactive version of the Federated RDF-Based Hybrid Search Engine - **FuhSen**.
-
-### Documentation
-The FuhSen wiki contains video tutorials, class, and interaction diagrams to facilitate the understanding of the FunSen architecture  and to facilitate the extension and resuse of FuhSen.
-https://github.com/LiDaKrA/FuhSen-reactive/wiki
-### Dependencies
-FuhSen reactive project depends on the following software
+## Dependencies
+The reactive project depends on the following software
 
 * JDK 1.8
 * Play Web Framework 2.4.6 "Damiya" and Activator 1.3.7
@@ -19,7 +17,7 @@ Download Play: https://www.playframework.com/download
 
 Installation steps: https://www.playframework.com/documentation/2.4.x/Installing
 
-Fuhsen depends on the Silk Workbench to transform the data collected from the data sources into RDF.
+This service depends on the Silk Workbench to transform the data collected from the data sources into RDF.
 An instance of the workbench must be available with the configuration files containing the transformation rules.
 The configuration files for the RDF transformation and all the resources needed to set up an instance of the Silk Workbench are 
 provided in the project [Data Integration Workspace](https://github.com/LiDaKrA/data-integration-workspace).
@@ -30,8 +28,8 @@ stored in conf/application.conf. The key must be provided before starting Fuhsen
 The quick and easy way to start compiling, running and coding FuhSen is to use "activator ui".
 However, you can also set up your favorits Java IDE (Eclipse or IntellJ Idea). https://www.playframework.com/documentation/2.4.x/IDE
 
-### Install and Build
-Fuhsen can be installed from the source code on Github or from the Docker image in the [Lidakra repository](https://hub.docker.com/r/lidakra/)
+## Install and Build
+The service can be installed from the source code on Github or from the Docker image in the [Lidakra repository](https://hub.docker.com/r/lidakra/)
 
 ### Install and build from the source code  
 To obtain the latest version of the project please clone the github repository
@@ -79,27 +77,7 @@ From the project root folder run the command
 
     $ sbt start
 
-The Fuhsen server will listen on port 9000.
-
-#### Run with Typesafe Activator 
-From the project root folder execute the command "activator ui". The application is going to be compiled and launched 
-at the following address: http://localhost:9000. Once the UI is launched in the browser go to the Run tab and select "Run app".
-
-
-#### Example Usage
-The demo server address is:  http://rdfsearchengine-fuhsen.rhcloud.com/fuhsen/
-
-#### OCCRP SSL Certificate installation
-
-1. Find JAVA_HOME. Its can be found with: readlink -f /usr/bin/java | sed "s:bin/java::"
-2. Copy ./certs/data.occrp.org.cer to JAVA_HOME/jre/lib/security
-3. Go to JAVA_HOME/jre/lib/security and import the certificate into the cacerts keystore
-
-
-    $ keytool -importcert -alias occrp -keystore cacerts -storepass changeit -file data.occrp.org.cer -noprompt
-
-
-(The keystore cacerts default password is: changeit)
+The service server will listen on port 9000.
 
 #### License
 
